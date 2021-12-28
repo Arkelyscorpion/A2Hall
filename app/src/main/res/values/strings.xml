@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">SampleProject</string>
+    <string-array name="Departments">
+        <item>CSE</item>
+        <item>IT</item>
+        <item>ECE</item>
+        <item>EEE</item>
+        <item>CSBS</item>
+        <item>Arch</item>
+        <item>Civil</item>
+        <item>Data Science</item>
+        <item>Mech</item>
+        <item>Mect</item>
+    </string-array>
+</resources>

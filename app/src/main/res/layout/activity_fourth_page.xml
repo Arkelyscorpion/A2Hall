@@ -11,7 +11,7 @@
         android:id="@+id/radioGroup"
         android:layout_width="350dp"
         android:layout_height="134dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -42,8 +42,8 @@
         android:id="@+id/radioGroup2"
         android:layout_width="352dp"
         android:layout_height="247dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="65dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup">
 

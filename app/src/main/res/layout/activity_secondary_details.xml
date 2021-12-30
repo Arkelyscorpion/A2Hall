@@ -33,12 +33,13 @@
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
 
-        android:layout_width="296dp"
-        android:layout_height="64dp"
+        android:layout_width="329dp"
+        android:layout_height="66dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="52dp"
         android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -56,6 +57,55 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <RadioGroup
+        android:id="@+id/radioGroup2"
+        android:layout_width="350dp"
+        android:layout_height="233dp"
+        android:layout_marginTop="180dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            android:id="@+id/headingForDegree"
+            style="@style/TextAppearance.MaterialComponents.Headline3"
+            android:layout_width="373dp"
+            android:layout_height="48dp"
+            android:text="\tDegree:\n"
+            android:textSize="17sp" />
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Academics" />
+
+        <RadioButton
+            android:id="@+id/radioButton4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="FDP/Seminar/Workshop/Training" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/othersForDesignation"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="307dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputFieldForOthers"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:hint="others" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

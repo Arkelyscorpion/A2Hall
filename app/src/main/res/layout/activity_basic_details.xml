@@ -30,11 +30,13 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/outlinedTextInputField1"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="343dp"
-        android:layout_height="66dp"
-        android:layout_marginStart="32dp"
+        android:layout_width="340dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
+        app:helperText="*Required"
+        app:helperTextTextColor="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,18 +45,20 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textInputEditText1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:hint="Name" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/outlinedTextInputField2"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="343dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="348dp"
+        android:layout_height="83dp"
         android:layout_marginStart="30dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="30dp"
+        app:helperText="*Required"
+        app:helperTextTextColor="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.544"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,13 +77,17 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/outlinedTextInputField3"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="337dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="338dp"
+        android:layout_height="85dp"
         android:layout_marginStart="30dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="30dp"
+        app:helperText="*Required"
+        app:helperTextTextColor="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:prefixText="+91"
+        app:prefixTextColor="@color/black"
         app:layout_constraintTop_toBottomOf="@+id/outlinedTextInputField2">
 
         <EditText
@@ -93,11 +101,11 @@
 
     <RadioGroup
         android:id="@+id/radioGroupForDesignation"
-        android:layout_width="342dp"
-        android:layout_height="288dp"
+        android:layout_width="340dp"
+        android:layout_height="198dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginStart="30dp"
         android:checkedButton="@id/radioButton1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.54"
@@ -115,7 +123,7 @@
         <RadioButton
             android:id="@+id/radioButton1"
             android:layout_width="310dp"
-            android:layout_height="wrap_content"
+            android:layout_height="25dp"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
             android:text="Professor" />
@@ -124,7 +132,7 @@
         <RadioButton
             android:id="@+id/radioButton2"
             android:layout_width="310dp"
-            android:layout_height="wrap_content"
+            android:layout_height="25dp"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
             android:text="Assistant Professor" />
@@ -132,7 +140,7 @@
         <RadioButton
             android:id="@+id/radioButton3"
             android:layout_width="310dp"
-            android:layout_height="60dp"
+            android:layout_height="25dp"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
             android:text="Associate Professor" />
@@ -160,7 +168,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textInputFieldForOthers"
                 android:layout_width="match_parent"
-                android:layout_height="62dp"
+                android:layout_height="40dp"
                 android:hint="others" />
         </com.google.android.material.textfield.TextInputLayout>
 

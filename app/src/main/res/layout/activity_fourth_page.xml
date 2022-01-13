@@ -9,18 +9,18 @@
 
     <RadioGroup
         android:id="@+id/radioGroup"
-        android:layout_width="350dp"
-        android:layout_height="134dp"
+        android:layout_width="354dp"
+        android:layout_height="142dp"
         android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/headingForDesignation"
+            android:id="@+id/headingForDegree"
             style="@style/TextAppearance.MaterialComponents.Headline3"
-            android:layout_width="373dp"
-            android:layout_height="48dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="\tDegree:\n"
             android:textSize="17sp" />
 
@@ -40,17 +40,17 @@
 
     <RadioGroup
         android:id="@+id/radioGroup2"
-        android:layout_width="352dp"
-        android:layout_height="247dp"
+        android:layout_width="342dp"
+        android:layout_height="280dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="50dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/headingForYear"
             android:layout_width="match_parent"
-            android:layout_height="58dp"
+            android:layout_height="42dp"
             android:text="Year of Study"
             android:textSize="16sp" />
 
@@ -90,20 +90,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="80dp"
-        android:layout_marginBottom="88dp"
+        android:layout_marginBottom="64dp"
         android:text="Next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.884"
-        app:layout_constraintStart_toEndOf="@+id/button7"
-        android:enabled="false"/>
+        app:layout_constraintHorizontal_bias="0.968"
+        app:layout_constraintStart_toEndOf="@+id/button7" />
 
     <Button
         android:id="@+id/button7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
-        android:layout_marginBottom="88dp"
+        android:layout_marginBottom="64dp"
         android:text="back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

@@ -106,7 +106,6 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="30dp"
-        android:checkedButton="@id/radioButton1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintStart_toStartOf="parent"
@@ -182,8 +181,7 @@
         android:layout_marginBottom="40dp"
         android:text="Next"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button3"
-        android:enabled="false"/>
+        app:layout_constraintStart_toEndOf="@+id/button3"/>
 
     <Button
         android:id="@+id/button3"

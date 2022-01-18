@@ -10,6 +10,8 @@ import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.TextView
 import com.example.sampleproject.databinding.ActivityMainBinding
+import java.io.File
+import java.lang.Exception
 
 class BasicDetails : AppCompatActivity() {
     private lateinit var etName : EditText
@@ -22,7 +24,6 @@ class BasicDetails : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_basic_details)
-
         etName = findViewById(R.id.textInputEditText1)
         etEmail = findViewById(R.id.editTextTextEmailAddress1)
         etPhone = findViewById(R.id.editTextPhone1)
@@ -39,12 +40,12 @@ class BasicDetails : AppCompatActivity() {
 
         nextButton = findViewById<Button>(R.id.button2)
         nextButton?.setOnClickListener() {
-            val username= etName.text.toString().trim()
-            val email= etEmail.text.toString().trim()
-            val phone= etPhone.text.toString().trim()
+            val username = etName.text.toString().trim()
+            val email = etEmail.text.toString().trim()
+            val phone = etPhone.text.toString().trim()
             val otherDesignation = textOthers.text.toString().trim()
-            if(username.isEmpty()||email.isEmpty()||phone.isEmpty()) {
-                if(username.isEmpty()) {
+            if (username.isEmpty() || email.isEmpty() || phone.isEmpty()) {
+                if (username.isEmpty()) {
                     etName.error = "Username required"
                     //return@setOnClickListener
                 }
@@ -58,13 +59,26 @@ class BasicDetails : AppCompatActivity() {
                 }
                 return@setOnClickListener
             }
-            if((!radiobutton1.isChecked) && (!radiobutton2.isChecked) && (!radiobutton3.isChecked) && (otherDesignation.isEmpty()))
-            {
+            if ((!radiobutton1.isChecked) && (!radiobutton2.isChecked) && (!radiobutton3.isChecked) && (otherDesignation.isEmpty())) {
                 textDesignation.error = "Required field"
                 return@setOnClickListener
             }
+            Details.setName(username)
+            Details.setEmail(email)
+            Details.setPhone(phone)
+
+            if(otherDesignation.isNotEmpty())
+                Details.setDesignation(otherDesignation)
+            else if(radiobutton1.isChecked)
+                Details.setDesignation(radiobutton1.text.toString())
+            else if(radiobutton2.isChecked)
+                Details.setDesignation(radiobutton2.text.toString())
+            else if(radiobutton3.isChecked)
+                Details.setDesignation(radiobutton3.text.toString())
+
             val intent = Intent(this, SecondaryDetails::class.java)
             startActivity(intent)
         }
+
     }
 }

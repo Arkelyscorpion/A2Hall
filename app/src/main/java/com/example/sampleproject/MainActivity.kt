@@ -6,6 +6,11 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Button
+import android.widget.EditText
+import java.io.File
+import java.lang.Exception
+import java.text.SimpleDateFormat
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +29,5 @@ class MainActivity : AppCompatActivity() {
             // start your next activity
             startActivity(intent)
         }
-
     }
 }

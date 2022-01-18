@@ -41,12 +41,21 @@ class SecondaryDetails : AppCompatActivity() {
                 textEventType.error = "Required field"
                 return@setOnClickListener
             }
+            Details.setDepartment(department)
 
             if(radiobutton2.isChecked) {
+                Details.setEventType(radiobutton2.text.toString())
+                Details.setDegree("-NA-")
+                Details.setYearOfStudy("-NA-")
                 val intent = Intent(this, FifthPage::class.java)
                 startActivity(intent)
             }
             else{
+                if(otherEvent.isNotEmpty())
+                    Details.setEventType(otherEvent)
+                else if(radiobutton1.isChecked)
+                    Details.setEventType(radiobutton1.text.toString())
+
                 val intent = Intent(this, FourthPage::class.java)
                 startActivity(intent)
             }

@@ -41,6 +41,21 @@ class FourthPage : AppCompatActivity() {
                 textYear.error = "Required field"
                 return@setOnClickListener
             }
+            if(radiobutton.isChecked)
+                Details.setDegree(radiobutton.text.toString())
+            else if(radiobutton4.isChecked)
+                Details.setDegree(radiobutton4.text.toString())
+
+            if(radiobutton6.isChecked)
+                Details.setYearOfStudy(radiobutton6.text.toString())
+            else if(radiobutton7.isChecked)
+                Details.setYearOfStudy(radiobutton7.text.toString())
+            else if(radiobutton8.isChecked)
+                Details.setYearOfStudy(radiobutton8.text.toString())
+            else if(radiobutton9.isChecked)
+                Details.setYearOfStudy(radiobutton9.text.toString())
+            else if(radiobutton10.isChecked)
+                Details.setYearOfStudy(radiobutton10.text.toString())
 
             val intent = Intent(this, FifthPage::class.java)
             startActivity(intent)

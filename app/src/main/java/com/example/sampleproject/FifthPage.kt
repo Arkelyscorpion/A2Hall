@@ -2,6 +2,7 @@ package com.example.sampleproject
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -28,6 +29,7 @@ class FifthPage : AppCompatActivity() {
         dateText = findViewById(R.id.textView3)
         timeButton = findViewById(R.id.button9)
         timeText = findViewById(R.id.textView4)
+        val nextButton = findViewById<Button>(R.id.button10)
 
         val myCalendar = Calendar.getInstance()
 
@@ -51,11 +53,19 @@ class FifthPage : AppCompatActivity() {
                 timeText.setText("$hourOfDay: $minute")
             }, startHour, startMinute, false).show()
         }
+
+        nextButton?.setOnClickListener() {
+
+            Details.setDate(dateText.text.toString())
+            Details.setTime(timeText.text.toString())
+            val intent = Intent(this, ConfirmationPage::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun updateLable(myCalendar: Calendar) {
         val myFormat = "dd-mm-yyyy"
-        val sdf = SimpleDateFormat(myFormat,Locale.UK)
+        val sdf = SimpleDateFormat(myFormat, Locale.UK)
         dateText.setText(sdf.format(myCalendar.time))
     }
 }

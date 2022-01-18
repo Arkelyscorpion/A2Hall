@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SampleProject">
         <activity
+            android:name=".ConfirmationPage"
+            android:exported="true" />
+        <activity
             android:name=".FifthPage"
             android:exported="false" />
         <activity

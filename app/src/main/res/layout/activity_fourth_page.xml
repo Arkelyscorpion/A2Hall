@@ -21,6 +21,8 @@
             style="@style/TextAppearance.MaterialComponents.Headline3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_round_book_24"
+            android:drawablePadding="5dp"
             android:text="\tDegree:\n"
             android:textSize="17sp" />
 

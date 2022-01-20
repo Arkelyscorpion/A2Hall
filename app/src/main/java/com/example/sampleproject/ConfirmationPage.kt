@@ -28,9 +28,7 @@ class ConfirmationPage : AppCompatActivity() {
     }
 
     fun writeallDetails(id : String) {
-        //PUSHING DATA INTO FIREBASE DATABSE
-
-
+        //PUSHING DATA INTO FIREBASE DATABASE
         database.child(id).setValue(Details)
     }
 }

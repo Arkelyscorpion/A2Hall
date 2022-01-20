@@ -1,7 +1,7 @@
 package com.example.sampleproject
 
 object Details {
-
+    private var id: String?= null
     private var name: String?= null
     private var email: String ?= null
     private var phone:String ?= null
@@ -43,6 +43,9 @@ object Details {
     fun setTime(time:String){
         this.time = time
     }
+    fun setId(id:String){
+        this.id = id
+    }
 
 //    fun getDetails(): String{
 //        var eventDetails: String
@@ -81,5 +84,8 @@ object Details {
     }
     fun getTime(): String?{
         return this.time
+    }
+    fun getId():String?{
+        return this.id
     }
 }

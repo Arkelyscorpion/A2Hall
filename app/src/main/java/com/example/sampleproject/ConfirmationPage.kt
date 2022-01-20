@@ -20,15 +20,16 @@ class ConfirmationPage : AppCompatActivity() {
         setContentView(R.layout.activity_confirmation_page)
         var tvDetails = findViewById<TextView>(R.id.textView5)
         //tvDetails.text =  Details.getDetails()
-
-        writeallDetails("2")
+        database = FirebaseDatabase.getInstance("https://a2-halls-tce-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("bookingDetails")
+        Details.setId(database.push().key!!)
+        writeallDetails(Details.getId()!!)
 
 
     }
 
     fun writeallDetails(id : String) {
         //PUSHING DATA INTO FIREBASE DATABSE
-        database = FirebaseDatabase.getInstance("https://a2-halls-tce-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("bookingDetails")
+
 
         database.child(id).setValue(Details)
     }

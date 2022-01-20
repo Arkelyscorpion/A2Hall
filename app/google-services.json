@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1048794929230",
+    "project_id": "a2-halls-tce",
+    "storage_bucket": "a2-halls-tce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1048794929230:android:4e5caa6bb188f3375a4b1f",
+        "android_client_info": {
+          "package_name": "com.example.sampleproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1048794929230-trq0su6s4gmp0joupfq21ubhh25oj80p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASBTKDsa8d2GLxYKlMop7JidQIsvr2jPU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1048794929230-trq0su6s4gmp0joupfq21ubhh25oj80p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

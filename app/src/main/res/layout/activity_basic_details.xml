@@ -47,7 +47,7 @@
             android:id="@+id/textInputEditText1"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="Name" />
+            android:hint="@string/name" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -73,7 +73,9 @@
             android:layout_weight="1"
             android:ems="10"
             android:hint="Email"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            tools:ignore="SpeakableTextPresentCheck"
+            android:autofillHints="" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -98,8 +100,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Phone Number"
-            android:inputType="phone" />
+            android:hint="@string/phone_number"
+            android:inputType="phone"
+            tools:ignore="SpeakableTextPresentCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <RadioGroup

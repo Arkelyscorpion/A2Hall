@@ -1,26 +1,20 @@
 package com.example.sampleproject
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.TextView
-import com.example.sampleproject.databinding.ActivityMainBinding
-import java.io.File
-import java.lang.Exception
 
 class BasicDetails : AppCompatActivity() {
+
     private lateinit var etName : EditText
     private lateinit var etEmail : EditText
     private lateinit var etPhone : EditText
     private lateinit var nextButton : Button
     private lateinit var backButton : Button
-
-    @SuppressLint("WrongViewCast")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_basic_details)
@@ -32,13 +26,13 @@ class BasicDetails : AppCompatActivity() {
         val radiobutton2 = findViewById<RadioButton>(R.id.radioButton2);
         val radiobutton3 = findViewById<RadioButton>(R.id.radioButton3);
         val textOthers = findViewById<EditText>(R.id.textInputFieldForOthers)
-        backButton = findViewById<Button>(R.id.button3)
+        val backButton = findViewById<Button>(R.id.button3)
         backButton?.setOnClickListener(){
             val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
         }
 
-        nextButton = findViewById<Button>(R.id.button2)
+        val nextButton = findViewById<Button>(R.id.button2)
         nextButton?.setOnClickListener() {
             val username = etName.text.toString().trim()
             val email = etEmail.text.toString().trim()
@@ -75,10 +69,8 @@ class BasicDetails : AppCompatActivity() {
                 Details.setDesignation(radiobutton2.text.toString())
             else if(radiobutton3.isChecked)
                 Details.setDesignation(radiobutton3.text.toString())
-
-            val intent = Intent(this, SecondaryDetails::class.java)
+            val intent = Intent(this,SecondaryDetails::class.java)
             startActivity(intent)
         }
-
     }
 }

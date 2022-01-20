@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">SampleProject</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="name">Name</string>
     <string-array name="Departments">
         <item>CSE</item>
         <item>IT</item>

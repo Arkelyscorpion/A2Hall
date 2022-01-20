@@ -1,16 +1,17 @@
 package com.example.sampleproject
 
 object Details {
-    private var name: String = ""
-    private var email: String = ""
-    private var phone:String = ""
-    private var designation: String = ""
-    private var department: String = ""
-    private var eventType: String = ""
-    private var degree: String = ""
-    private var yearOfStudy: String = ""
-    private var date: String = ""
-    private var time: String = ""
+
+    private var name: String?= null
+    private var email: String ?= null
+    private var phone:String ?= null
+    private var designation: String ?= null
+    private var department: String ?= null
+    private var eventType: String ?= null
+    private var degree: String ?= null
+    private var yearOfStudy: String ?= null
+    private var date: String ?= null
+    private var time: String ?=null
 
     fun setName(name:String){
         this.name = name
@@ -43,12 +44,42 @@ object Details {
         this.time = time
     }
 
-    fun getDetails(): String{
-        var eventDetails: String
-        eventDetails= "Name:"+ name +"\nEmail:"+ email +"\nPhone:"+ phone + "\nDesignation:"+ designation + "\nDepartment:"+ department + "\nEvent:"+ eventType + "\nDegree:"+ degree + "\nYear of study:"+ yearOfStudy + "\nDate:"+ date + "\nTime:"+ time
-        return eventDetails
-    }
+//    fun getDetails(): String{
+//        var eventDetails: String
+//        eventDetails= "Name:"+ name +"\nEmail:"+ email +"\nPhone:"+ phone + "\nDesignation:"+ designation + "\nDepartment:"+ department + "\nEvent:"+ eventType + "\nDegree:"+ degree + "\nYear of study:"+ yearOfStudy + "\nDate:"+ date + "\nTime:"+ time
+//        return eventDetails
+//    }
     /*fun clear(){
         eventDetails = " "
     }*/
+    fun getName(): String? {
+        return this.name
+    }
+    fun getEmail(): String?{
+        return this.email
+    }
+    fun getPhone(): String?{
+        return this.phone
+    }
+    fun getDesignation(): String?{
+        return this.designation
+    }
+    fun getDepartment(): String?{
+        return this.department
+    }
+    fun getEventType(): String?{
+        return this.eventType
+    }
+    fun getDegree(): String?{
+        return this.degree
+    }
+    fun getYearOfStudy(): String?{
+        return this.yearOfStudy
+    }
+    fun getDate(): String?{
+        return this.date
+    }
+    fun getTime(): String?{
+        return this.time
+    }
 }

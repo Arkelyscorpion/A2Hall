@@ -1,5 +1,6 @@
 package com.example.sampleproject
 
+import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.Intent
@@ -7,10 +8,11 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.DatePicker
+//import android.widget.DatePicker
 import android.widget.TextView
 import androidx.annotation.RequiresApi
-import java.text.SimpleDateFormat
+//import java.text.SimpleDateFormat
+//import java.time.DayOfWeek
 import java.util.*
 
 class FifthPage : AppCompatActivity() {
@@ -20,6 +22,7 @@ class FifthPage : AppCompatActivity() {
     private lateinit var timeText : TextView
     private lateinit var timeButton : Button
 
+    @SuppressLint("SetTextI18n")
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,29 +32,34 @@ class FifthPage : AppCompatActivity() {
         dateText = findViewById(R.id.textView3)
         timeButton = findViewById(R.id.button9)
         timeText = findViewById(R.id.textView4)
+        val backButton= findViewById<Button>(R.id.button13)
         val nextButton = findViewById<Button>(R.id.button10)
 
-        val myCalendar = Calendar.getInstance()
-
-        val datePicker = DatePickerDialog.OnDateSetListener{ view, year, month, dayOfMonth ->
-            myCalendar.set(Calendar.YEAR, year)
-            myCalendar.set(Calendar.MONTH, month)
-            myCalendar.set(Calendar.DAY_OF_MONTH,dayOfMonth)
-            updateLable(myCalendar)
-        }
+        val c = Calendar.getInstance()
+        val year = c.get(Calendar.YEAR)
+        val month = c.get(Calendar.MONTH)
+        val day = c.get(Calendar.DAY_OF_MONTH)
 
         dateButton.setOnClickListener {
-            DatePickerDialog(this, datePicker, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
-            myCalendar.get(Calendar.DAY_OF_MONTH)).show()
+            val dpd = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                // Display Selected date in TextView
+                dateText.setText("" + dayOfMonth + "-" + (monthOfYear+1) + "-" + year)
+            }, year, month, day)
+            dpd.getDatePicker().setMinDate(c.getTimeInMillis());
+            dpd.show()
         }
 
         timeButton.setOnClickListener{
-            val startHour = myCalendar.get(Calendar.HOUR_OF_DAY)
-            val startMinute = myCalendar.get(Calendar.MINUTE)
+            val startHour = c.get(Calendar.HOUR_OF_DAY)
+            val startMinute = c.get(Calendar.MINUTE)
 
-            TimePickerDialog(this, TimePickerDialog.OnTimeSetListener{view, hourOfDay, minute ->
-                timeText.setText("$hourOfDay: $minute")
+            TimePickerDialog(this, { view, hourOfDay, minute ->
+                timeText.text = "$hourOfDay: $minute"
             }, startHour, startMinute, false).show()
+        }
+        backButton.setOnClickListener{
+            val intent = Intent(this, SecondaryDetails::class.java)
+            startActivity(intent)
         }
 
         nextButton?.setOnClickListener() {
@@ -63,9 +71,4 @@ class FifthPage : AppCompatActivity() {
         }
     }
 
-    private fun updateLable(myCalendar: Calendar) {
-        val myFormat = "dd-mm-yyyy"
-        val sdf = SimpleDateFormat(myFormat, Locale.UK)
-        dateText.setText(sdf.format(myCalendar.time))
-    }
 }

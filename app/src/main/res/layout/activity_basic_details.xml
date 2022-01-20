@@ -6,27 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".BasicDetails">
 
-    <!--    <com.google.android.material.textfield.TextInputLayout-->
-    <!--        android:id="@+id/outlinedTextInputField4"-->
-    <!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_marginStart="32dp"-->
-    <!--        android:layout_marginTop="404dp"-->
-    <!--        android:layout_marginEnd="32dp"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintHorizontal_bias="0.0"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent">-->
-
-    <!--        <com.google.android.material.textfield.TextInputEditText-->
-    <!--            android:id="@+id/textInputEditText4"-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:hint="Designation" />-->
-    <!--    </com.google.android.material.textfield.TextInputLayout>-->
-
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/outlinedTextInputField1"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -150,13 +129,6 @@
             android:layout_marginEnd="32dp"
             android:text="Associate Professor" />
 
-        <!--        <RadioButton-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="match_parent"-->
-        <!--            android:layout_marginStart="32dp"-->
-        <!--            android:layout_marginEnd="32dp"-->
-        <!--            android:text="Others"/>-->
-
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/othersForDesignation"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -173,7 +145,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textInputFieldForOthers"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="60dp"
                 android:hint="others" />
         </com.google.android.material.textfield.TextInputLayout>
 

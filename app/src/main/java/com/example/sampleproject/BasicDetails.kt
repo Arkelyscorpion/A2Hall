@@ -1,20 +1,22 @@
 package com.example.sampleproject
 
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.TextView
+import android.widget.Toast
 
 class BasicDetails : AppCompatActivity() {
 
     private lateinit var etName : EditText
     private lateinit var etEmail : EditText
     private lateinit var etPhone : EditText
-    private lateinit var nextButton : Button
-    private lateinit var backButton : Button
+    lateinit var sPref: SharedPreferences
+    val SAVED_TEXT = "saved_text"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_basic_details)
@@ -69,8 +71,24 @@ class BasicDetails : AppCompatActivity() {
                 Details.setDesignation(radiobutton2.text.toString())
             else if(radiobutton3.isChecked)
                 Details.setDesignation(radiobutton3.text.toString())
+
+            //saveText()
             val intent = Intent(this,SecondaryDetails::class.java)
             startActivity(intent)
         }
     }
+//    fun saveText() {
+//        sPref = getPreferences(MODE_PRIVATE)
+//        val ed: SharedPreferences.Editor = sPref.edit()
+//        ed.putString(SAVED_TEXT, etName.getText().toString())
+//        ed.commit()
+//        Toast.makeText(this, "Text saved", Toast.LENGTH_SHORT).show()
+//    }
+//
+//    fun loadText() {
+//        sPref = getPreferences(MODE_PRIVATE)
+//        val savedText: String? = sPref.getString(SAVED_TEXT, "")
+//        etName.setText(savedText)
+//        Toast.makeText(this, "Text loaded", Toast.LENGTH_SHORT).show()
+//    }
 }

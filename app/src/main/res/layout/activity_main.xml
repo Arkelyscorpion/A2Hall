@@ -11,13 +11,13 @@
         android:id="@+id/imageView"
         android:layout_width="151dp"
         android:layout_height="139dp"
+        android:contentDescription="TODO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.26"
-        app:srcCompat="@drawable/favicon"
-        android:contentDescription="TODO" />
+        app:srcCompat="@drawable/favicon" />
 
 
     <TextView
@@ -25,25 +25,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="A2 Hall Booking System"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.15"
-        android:textSize="20sp"   />
+        app:layout_constraintVertical_bias="0.15" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="44dp"
+        android:layout_width="170dp"
+        android:layout_height="60dp"
         android:text="Book Slots"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.687" />
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCheckSlot"
+        app:layout_constraintVertical_bias="0.216" />
 
+    <Button
+        android:id="@+id/btnCheckSlot"
+        android:layout_width="170dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="112dp"
+        android:text="Check Slots"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,7 +11,8 @@ object Details {
     private var degree: String ?= null
     private var yearOfStudy: String ?= null
     private var date: String ?= null
-    private var time: String ?=null
+    private var startTime: String ?=null
+    private var endTime: String ?=null
 
     fun setName(name:String){
         this.name = name
@@ -40,8 +41,11 @@ object Details {
     fun setDate(date:String){
         this.date = date
     }
-    fun setTime(time:String){
-        this.time = time
+    fun setStartTime(startTime:String){
+        this.startTime = startTime
+    }
+    fun setEndTime(endTime:String){
+        this.endTime = endTime
     }
     fun setId(id:String){
         this.id = id
@@ -82,8 +86,11 @@ object Details {
     fun getDate(): String?{
         return this.date
     }
-    fun getTime(): String?{
-        return this.time
+    fun getStartTime(): String?{
+        return this.startTime
+    }
+    fun getEndTime(): String?{
+        return this.endTime
     }
     fun getId():String?{
         return this.id

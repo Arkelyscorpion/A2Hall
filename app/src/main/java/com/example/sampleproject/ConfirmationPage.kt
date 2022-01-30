@@ -27,6 +27,7 @@ class ConfirmationPage : AppCompatActivity() {
         val tvDate = findViewById<TextView>(R.id.textViewDate)
         val tvTime = findViewById<TextView>(R.id.textViewTime)
         val backButton= findViewById<Button>(R.id.button12)
+        val confirmButton= findViewById<Button>(R.id.button11)
         tvName.text = "NAME:    "+ Details.getName()
         tvEmail.text = "EMAIL:  "+ Details.getEmail()
         tvPhone.text = "CONTACT NO.:    "+ Details.getPhone()
@@ -36,15 +37,17 @@ class ConfirmationPage : AppCompatActivity() {
         tvDegree.text = "DEGREE:"+ Details.getDegree()
         tvYearOfStudy.text = "YEAR OF STUDY:    "+ Details.getYearOfStudy()
         tvDate.text = "DATE:    "+ Details.getDate()
-        tvTime.text = "TIME:    "+ Details.getTime()
+        tvTime.text = "TIME:    "+ Details.getStartTime() + " to " + Details.getEndTime()
 
         backButton.setOnClickListener{
             val intent = Intent(this, FifthPage::class.java)
             startActivity(intent)
         }
-        database = FirebaseDatabase.getInstance("https://a2-halls-tce-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("bookingDetails")
-        Details.setId(database.push().key!!)
-        writeAllDetails(Details.getId()!!)
+        confirmButton.setOnClickListener {
+            database = FirebaseDatabase.getInstance("https://a2-halls-tce-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("bookingDetails")
+            Details.setId(database.push().key!!)
+            writeAllDetails(Details.getId()!!)
+        }
     }
 
     fun writeAllDetails(id : String) {

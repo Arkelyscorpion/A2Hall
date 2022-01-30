@@ -19,8 +19,10 @@ class FifthPage : AppCompatActivity() {
 
     private lateinit var dateText : TextView
     private lateinit var dateButton : Button
-    private lateinit var timeText : TextView
-    private lateinit var timeButton : Button
+    private lateinit var startTimeText : TextView
+    private lateinit var endTimeText : TextView
+    private lateinit var startTimeButton : Button
+    private lateinit var endTimeButton : Button
 
     @SuppressLint("SetTextI18n")
     @RequiresApi(Build.VERSION_CODES.N)
@@ -30,8 +32,10 @@ class FifthPage : AppCompatActivity() {
 
         dateButton = findViewById(R.id.button8)
         dateText = findViewById(R.id.textView3)
-        timeButton = findViewById(R.id.button9)
-        timeText = findViewById(R.id.textView4)
+        startTimeButton = findViewById(R.id.button9)
+        endTimeButton = findViewById(R.id.button14)
+        startTimeText = findViewById(R.id.textView4)
+        endTimeText = findViewById(R.id.textView5)
         val backButton= findViewById<Button>(R.id.button13)
         val nextButton = findViewById<Button>(R.id.button10)
 
@@ -49,13 +53,22 @@ class FifthPage : AppCompatActivity() {
             dpd.show()
         }
 
-        timeButton.setOnClickListener{
+        startTimeButton.setOnClickListener{
             val startHour = c.get(Calendar.HOUR_OF_DAY)
             val startMinute = c.get(Calendar.MINUTE)
 
             TimePickerDialog(this, { view, hourOfDay, minute ->
-                timeText.text = "$hourOfDay: $minute"
+                startTimeText.text = "$hourOfDay: $minute"
             }, startHour, startMinute, false).show()
+        }
+        endTimeButton.setOnClickListener{
+            val startHour = c.get(Calendar.HOUR_OF_DAY)
+            val startMinute = c.get(Calendar.MINUTE)
+
+            TimePickerDialog(this, { view, hourOfDay, minute ->
+                endTimeText.text = "$hourOfDay: $minute"
+            }, startHour, startMinute, false).show()
+
         }
         backButton.setOnClickListener{
             val intent = Intent(this, SecondaryDetails::class.java)
@@ -65,7 +78,8 @@ class FifthPage : AppCompatActivity() {
         nextButton?.setOnClickListener() {
 
             Details.setDate(dateText.text.toString())
-            Details.setTime(timeText.text.toString())
+            Details.setStartTime(startTimeText.text.toString())
+            Details.setEndTime(endTimeText.text.toString())
             val intent = Intent(this, ConfirmationPage::class.java)
             startActivity(intent)
         }

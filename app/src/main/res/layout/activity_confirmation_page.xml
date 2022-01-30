@@ -30,7 +30,7 @@
             android:id="@+id/textViewName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#ADB6E8"
+            android:background="#FFFFFF"
             android:padding="10dp"
             android:text="Name:"
             android:textSize="20dp" />
@@ -39,7 +39,7 @@
             android:id="@+id/textViewEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#ADB6E8"
+            android:background="#FFFFFF"
             android:padding="10dp"
             android:text="Email:"
             android:textSize="20dp" />
@@ -48,7 +48,7 @@
             android:id="@+id/textViewPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#ADB6E8"
+            android:background="#FFFFFF"
             android:padding="10dp"
             android:text="Phone:"
             android:textSize="20dp" />
@@ -57,7 +57,7 @@
             android:id="@+id/textViewDesignation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#ADB6E8"
+            android:background="#FFFFFF"
             android:padding="10dp"
             android:text="Designation:"
             android:textSize="20dp" />
@@ -66,7 +66,7 @@
             android:id="@+id/textViewDepartment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#ADB6E8"
+            android:background="#FFFFFF"
             android:padding="10dp"
             android:text="Department:"
             android:textSize="20dp" />
@@ -75,7 +75,7 @@
             android:id="@+id/textViewDegree"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#ADB6E8"
+            android:background="#FFFFFF"
             android:padding="10dp"
             android:text="Degree:"
             android:textSize="20dp" />
@@ -84,7 +84,7 @@
             android:id="@+id/textViewYearOfStudy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#ADB6E8"
+            android:background="#FFFFFF"
             android:padding="10dp"
             android:text="Year of Study:"
             android:textSize="20dp" />
@@ -149,7 +149,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginBottom="28dp"
-        android:text="Check slots"
+        android:text="Confirm"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"

@@ -1,19 +1,21 @@
 package com.example.sampleproject
-
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
-//import android.widget.DatePicker
 import android.widget.TextView
+import android.widget.TimePicker
+import android.widget.Toast
 import androidx.annotation.RequiresApi
-//import java.text.SimpleDateFormat
-//import java.time.DayOfWeek
+import androidx.appcompat.app.AppCompatActivity
 import java.util.*
+import android.widget.EditText
 
 class FifthPage : AppCompatActivity() {
 
@@ -43,6 +45,22 @@ class FifthPage : AppCompatActivity() {
         val year = c.get(Calendar.YEAR)
         val month = c.get(Calendar.MONTH)
         val day = c.get(Calendar.DAY_OF_MONTH)
+        val mStartTimePicker: TimePickerDialog
+        val mEndTimePicker: TimePickerDialog
+        val hour = c.get(Calendar.HOUR_OF_DAY)
+        val minute = c.get(Calendar.MINUTE)
+
+        mStartTimePicker = TimePickerDialog(this, object : TimePickerDialog.OnTimeSetListener {
+            override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
+                startTimeText.setText(String.format("%d:%d", hourOfDay, minute))
+            }
+        }, hour, minute, false)
+
+        mEndTimePicker = TimePickerDialog(this, object : TimePickerDialog.OnTimeSetListener {
+            override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
+                endTimeText.setText(String.format("%d:%d", hourOfDay, minute))
+            }
+        }, hour, minute, false)
 
         dateButton.setOnClickListener {
             val dpd = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
@@ -54,29 +72,19 @@ class FifthPage : AppCompatActivity() {
         }
 
         startTimeButton.setOnClickListener{
-            val startHour = c.get(Calendar.HOUR_OF_DAY)
-            val startMinute = c.get(Calendar.MINUTE)
-
-            TimePickerDialog(this, { view, hourOfDay, minute ->
-                startTimeText.text = "$hourOfDay: $minute"
-            }, startHour, startMinute, false).show()
+            mStartTimePicker.show()
         }
+
         endTimeButton.setOnClickListener{
-            val startHour = c.get(Calendar.HOUR_OF_DAY)
-            val startMinute = c.get(Calendar.MINUTE)
-
-            TimePickerDialog(this, { view, hourOfDay, minute ->
-                endTimeText.text = "$hourOfDay: $minute"
-            }, startHour, startMinute, false).show()
-
+            mEndTimePicker.show()
         }
+
         backButton.setOnClickListener{
             val intent = Intent(this, SecondaryDetails::class.java)
             startActivity(intent)
         }
 
         nextButton?.setOnClickListener() {
-
             Details.setDate(dateText.text.toString())
             Details.setStartTime(startTimeText.text.toString())
             Details.setEndTime(endTimeText.text.toString())
@@ -84,5 +92,4 @@ class FifthPage : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
 }

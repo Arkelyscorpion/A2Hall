@@ -71,8 +71,6 @@ class BasicDetails : AppCompatActivity() {
                 Details.setDesignation(radiobutton2.text.toString())
             else if(radiobutton3.isChecked)
                 Details.setDesignation(radiobutton3.text.toString())
-
-            //saveText()
             val intent = Intent(this,SecondaryDetails::class.java)
             startActivity(intent)
         }
@@ -85,10 +83,6 @@ class BasicDetails : AppCompatActivity() {
 //        Toast.makeText(this, "Text saved", Toast.LENGTH_SHORT).show()
 //    }
 //
-//    fun loadText() {
-//        sPref = getPreferences(MODE_PRIVATE)
-//        val savedText: String? = sPref.getString(SAVED_TEXT, "")
-//        etName.setText(savedText)
-//        Toast.makeText(this, "Text loaded", Toast.LENGTH_SHORT).show()
-//    }
+
 }
+//this is comment added by krishna sameer

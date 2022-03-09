@@ -75,15 +75,10 @@ class BasicDetails : AppCompatActivity() {
             startActivity(intent)
         }
     }
-//    fun saveText() {
-//        sPref = getPreferences(MODE_PRIVATE)
-//        val ed: SharedPreferences.Editor = sPref.edit()
-//        ed.putString(SAVED_TEXT, etName.getText().toString())
-//        ed.commit()
-//        Toast.makeText(this, "Text saved", Toast.LENGTH_SHORT).show()
-//    }
+
 //
 
 }
 //this is comment added by krishna sameer
 // this git commit by sameer from rishi laptop
+// this is commit from krishna againi

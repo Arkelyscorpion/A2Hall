@@ -49,28 +49,39 @@ class ConfirmationPage : AppCompatActivity() {
             startActivity(intent)
         }
         confirmButton?.setOnClickListener {
+            var booltiming = true;
             database = FirebaseDatabase.getInstance("https://a2-halls-tce-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("bookingDetails")
             database.addValueEventListener(object: ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
-
                     for (eventSnapshot in snapshot.children) {
                         var edate = eventSnapshot.child("date").getValue()
                         var estime = eventSnapshot.child("startTime").getValue()
                         var eetime = eventSnapshot.child("endTime").getValue()
-                        var condition1 = checkTimeSlots(estime.toString(),eetime.toString(),Details.getStartTime())
-                        var condition2 = checkTimeSlots(estime.toString(),eetime.toString(),Details.getEndTime())
-                        if ((Details.getDate() == edate) && (condition1||condition2)) {
-                            Toast.makeText(applicationContext,"Slot not available! Refer slots and contact the concerned person",Toast.LENGTH_SHORT).show()
-                            break
-                        }
+                        // var condition1 = checkTimeSlots(estime.toString(),eetime.toString(),Details.getStartTime(),Details.getEndTime())
+                        // var condition2 = checkTimeSlots(estime.toString(),eetime.toString(),Details.getStartTime(),Details.getEndTime())
+                        booltiming = !((Details.getDate() == edate) && !checkTimeSlots(estime.toString(),eetime.toString(), Details.getStartTime(),Details.getEndTime()))
                     }
                 }
                 override fun onCancelled(error: DatabaseError) {
                     TODO("Not yet implemented")
                 }
             })
-            Details.setId(database.push().key!!)
-            writeAllDetails(Details.getId()!!)
+            if(booltiming)
+            {
+                Details.setId(database.push().key!!)
+                writeAllDetails(Details.getId()!!)
+                val intent = Intent(this,ConfirmationPage::class.java)
+                startActivity(intent)
+            }
+            else
+            {
+                Toast.makeText(
+                    applicationContext,
+                    "Slot not available! Refer slots and contact the concerned person",
+                    Toast.LENGTH_SHORT
+                ).show()
+                println("Slot conflict")
+            }
         }
     }
 
@@ -79,28 +90,36 @@ class ConfirmationPage : AppCompatActivity() {
         database.child(id).setValue(Details)
     }
 
-    fun checkTimeSlots(a: String, b: String, c: String?): Boolean{
-        try {
-            val time1: Date = SimpleDateFormat("HH:mm").parse(a)
-            val calendar1 = Calendar.getInstance()
-            calendar1.time = time1
-            calendar1.add(Calendar.DATE, 1)
-            val time2: Date = SimpleDateFormat("HH:mm").parse(b)
-            val calendar2 = Calendar.getInstance()
-            calendar2.time = time2
-            calendar2.add(Calendar.DATE, 1)
-            val d: Date = SimpleDateFormat("HH:mm").parse(c)
-            val calendar3 = Calendar.getInstance()
-            calendar3.time = d
-            calendar3.add(Calendar.DATE, 1)
-            val x = calendar3.time
-            if (x.after(calendar1.time) && x.before(calendar2.time)) {
-                //checks whether the current time is between 14:49:00 and 20:11:13.
-                return true
-            }
-        } catch (e: ParseException) {
-            e.printStackTrace()
-        }
-        return false
+    fun checkTimeSlots(oldstart: String, oldend: String, newstart: String?,newend: String?): Boolean{
+//        try {
+//            val time1: Date = SimpleDateFormat("HH:mm").parse(a)
+//            val calendar1 = Calendar.getInstance()
+//            calendar1.time = time1
+//            calendar1.add(Calendar.DATE, 1)
+//            val time2: Date = SimpleDateFormat("HH:mm").parse(b)
+//            val calendar2 = Calendar.getInstance()
+//            calendar2.time = time2
+//            calendar2.add(Calendar.DATE, 1)
+//            val d: Date = SimpleDateFormat("HH:mm").parse(c)
+//            val calendar3 = Calendar.getInstance()
+//            calendar3.time = d
+//            calendar3.add(Calendar.DATE, 1)
+//            val x = calendar3.time
+//            if (x.after(calendar1.time) && x.before(calendar2.time)) {
+//                //checks whether the current time is between 14:49:00 and 20:11:13.
+//                return true
+//            }
+//        } catch (e: ParseException) {
+//            e.printStackTrace()
+////        }
+//        return false
+        var bool = false;
+        if(newend!! >= oldstart && newend <= oldend)
+            bool = true;
+        if(newstart!! >= oldstart && newstart <= oldend)
+            bool = true;
+        if(oldstart!! >= newstart &&  newend >= oldend)
+            bool = true;
+        return bool;
     }
 }

@@ -85,6 +85,3 @@ class BasicDetails : AppCompatActivity() {
 //
 
 }
-//this is comment added by krishna sameer
-// this git commit by sameer from rishi laptop
-// new chsnges

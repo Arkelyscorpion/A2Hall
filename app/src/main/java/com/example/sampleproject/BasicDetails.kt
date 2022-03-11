@@ -2,13 +2,12 @@ package com.example.sampleproject
 
 import android.content.Intent
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.TextView
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 
 class BasicDetails : AppCompatActivity() {
 
@@ -24,9 +23,9 @@ class BasicDetails : AppCompatActivity() {
         etEmail = findViewById(R.id.editTextTextEmailAddress1)
         etPhone = findViewById(R.id.editTextPhone1)
         val textDesignation = findViewById<TextView>(R.id.headingForDesignation)
-        val radiobutton1 = findViewById<RadioButton>(R.id.radioButton1);
-        val radiobutton2 = findViewById<RadioButton>(R.id.radioButton2);
-        val radiobutton3 = findViewById<RadioButton>(R.id.radioButton3);
+        val radiobutton1 = findViewById<RadioButton>(R.id.radioButton1)
+        val radiobutton2 = findViewById<RadioButton>(R.id.radioButton2)
+        val radiobutton3 = findViewById<RadioButton>(R.id.radioButton3)
         val textOthers = findViewById<EditText>(R.id.textInputFieldForOthers)
         val backButton = findViewById<Button>(R.id.button3)
         backButton?.setOnClickListener(){

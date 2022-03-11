@@ -6,6 +6,7 @@
         <entry key="..\:/A2Hall/app/src/main/res/layout/activity_basic_details.xml" value="1.0" />
         <entry key="..\:/A2Hall/app/src/main/res/layout/activity_booked_slots.xml" value="0.1" />
         <entry key="..\:/A2Hall/app/src/main/res/layout/activity_confirmation_page.xml" value="0.264" />
+        <entry key="..\:/A2Hall/app/src/main/res/layout/activity_confirmed_page.xml" value="0.25" />
         <entry key="..\:/A2Hall/app/src/main/res/layout/activity_fifth_page.xml" value="0.26197916666666665" />
         <entry key="..\:/A2Hall/app/src/main/res/layout/activity_fourth_page.xml" value="0.26197916666666665" />
         <entry key="..\:/A2Hall/app/src/main/res/layout/activity_main.xml" value="0.25" />
@@ -14,15 +15,12 @@
         <entry key="..\:/A2Hall/app/src/main/res/layout/event_item.xml" value="0.264" />
         <entry key="..\:/A2Hall/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.26614583333333336" />
         <entry key="..\:/Programming/Projects/SampleProject/app/src/main/res/layout/activity_basic_details.xml" value="0.33177083333333335" />
-        <entry key="..\:/Programming/Projects/SampleProject/app/src/main/res/layout/activity_booked_slots.xml" value="0.33177083333333335" />
         <entry key="..\:/Programming/Projects/SampleProject/app/src/main/res/layout/activity_confirmation_page.xml" value="0.33177083333333335" />
-        <entry key="..\:/Programming/Projects/SampleProject/app/src/main/res/layout/activity_fifth_page.xml" value="0.33" />
+        <entry key="..\:/Programming/Projects/SampleProject/app/src/main/res/layout/activity_fifth_page.xml" value="0.67" />
         <entry key="..\:/Programming/Projects/SampleProject/app/src/main/res/layout/activity_fourth_page.xml" value="0.67" />
-        <entry key="..\:/Programming/Projects/SampleProject/app/src/main/res/layout/activity_main.xml" value="0.2490566037735849" />
+        <entry key="..\:/Programming/Projects/SampleProject/app/src/main/res/layout/activity_main.xml" value="0.67" />
         <entry key="..\:/Programming/Projects/SampleProject/app/src/main/res/layout/activity_secondary_details.xml" value="0.75" />
-        <entry key="..\:/Programming/Projects/SampleProject/app/src/main/res/layout/dropdown_item.xml" value="0.5" />
-        <entry key="..\:/Programming/Projects/SampleProject/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.338" />
-        <entry key="..\:/Programming/Projects/SampleProject/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.338" />
+        <entry key="..\:/Programming/Projects/SampleProject/app/src/main/res/layout/dropdown_item.xml" value="1.0" />
       </map>
     </option>
   </component>

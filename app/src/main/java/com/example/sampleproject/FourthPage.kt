@@ -1,14 +1,11 @@
 package com.example.sampleproject
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.widget.Button
 import android.widget.RadioButton
-import android.widget.RadioGroup
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
 class FourthPage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,13 +13,13 @@ class FourthPage : AppCompatActivity() {
         setContentView(R.layout.activity_fourth_page)
         val textDegree = findViewById<TextView>(R.id.headingForDegree)
         val textYear = findViewById<TextView>(R.id.headingForYear)
-        val radiobutton = findViewById<RadioButton>(R.id.radioButton);
-        val radiobutton4 = findViewById<RadioButton>(R.id.radioButton4);
-        val radiobutton6 = findViewById<RadioButton>(R.id.radioButton6);
-        val radiobutton7 = findViewById<RadioButton>(R.id.radioButton7);
-        val radiobutton8 = findViewById<RadioButton>(R.id.radioButton8);
-        val radiobutton9 = findViewById<RadioButton>(R.id.radioButton9);
-        val radiobutton10 = findViewById<RadioButton>(R.id.radioButton10);
+        val radiobutton = findViewById<RadioButton>(R.id.radioButton)
+        val radiobutton4 = findViewById<RadioButton>(R.id.radioButton4)
+        val radiobutton6 = findViewById<RadioButton>(R.id.radioButton6)
+        val radiobutton7 = findViewById<RadioButton>(R.id.radioButton7)
+        val radiobutton8 = findViewById<RadioButton>(R.id.radioButton8)
+        val radiobutton9 = findViewById<RadioButton>(R.id.radioButton9)
+        val radiobutton10 = findViewById<RadioButton>(R.id.radioButton10)
         val nextButton = findViewById<Button>(R.id.button6)
         val backButton = findViewById<Button>(R.id.button7)
 

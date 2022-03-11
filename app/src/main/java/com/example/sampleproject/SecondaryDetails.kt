@@ -20,8 +20,8 @@ class SecondaryDetails : AppCompatActivity() {
         val autoCompleteTV = findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView)
         val textOtherEvent = findViewById<EditText>(R.id.textInputFieldForOthers)
         val textEventType = findViewById<TextView>(R.id.headingForEvent)
-        radiobutton1 = findViewById(R.id.radioButton);
-        radiobutton2 = findViewById(R.id.radioButton4);
+        radiobutton1 = findViewById(R.id.radioButton)
+        radiobutton2 = findViewById(R.id.radioButton4)
         nextButton = findViewById(R.id.button5)
         backButton = findViewById(R.id.button4)
 

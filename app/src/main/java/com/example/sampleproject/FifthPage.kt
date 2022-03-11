@@ -3,19 +3,14 @@ import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.Intent
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.TimePicker
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import java.util.*
-import android.widget.EditText
 
 class FifthPage : AppCompatActivity() {
 
@@ -67,7 +62,7 @@ class FifthPage : AppCompatActivity() {
                 // Display Selected date in TextView
                 dateText.setText("" + dayOfMonth + "-" + (monthOfYear+1) + "-" + year)
             }, year, month, day)
-            dpd.getDatePicker().setMinDate(c.getTimeInMillis());
+            dpd.getDatePicker().setMinDate(c.getTimeInMillis())
             dpd.show()
         }
 

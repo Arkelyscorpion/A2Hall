@@ -1,16 +1,9 @@
 package com.example.sampleproject
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
 import android.widget.Button
-import android.widget.EditText
-import java.io.File
-import java.lang.Exception
-import java.text.SimpleDateFormat
-import java.util.*
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -60,6 +60,8 @@ class ConfirmationPage : AppCompatActivity() {
                         // var condition1 = checkTimeSlots(estime.toString(),eetime.toString(),Details.getStartTime(),Details.getEndTime())
                         // var condition2 = checkTimeSlots(estime.toString(),eetime.toString(),Details.getStartTime(),Details.getEndTime())
                         booltiming = !((Details.getDate() == edate) && !checkTimeSlots(estime.toString(),eetime.toString(), Details.getStartTime(),Details.getEndTime()))
+                        if(!booltiming)
+                            break
                     }
                 }
                 override fun onCancelled(error: DatabaseError) {
@@ -70,7 +72,7 @@ class ConfirmationPage : AppCompatActivity() {
             {
                 Details.setId(database.push().key!!)
                 writeAllDetails(Details.getId()!!)
-                val intent = Intent(this,ConfirmationPage::class.java)
+                val intent = Intent(this,ConfirmedPage::class.java)
                 startActivity(intent)
             }
             else

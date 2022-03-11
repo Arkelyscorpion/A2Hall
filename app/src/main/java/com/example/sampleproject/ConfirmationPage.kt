@@ -2,21 +2,18 @@ package com.example.sampleproject
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Gravity
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.*
-import java.text.ParseException
-import java.text.SimpleDateFormat
-import java.util.*
 
 //data class Details(val name:String){}
 
 class ConfirmationPage : AppCompatActivity() {
-    private lateinit var database : DatabaseReference
+    private lateinit var database: DatabaseReference
+
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,27 +28,23 @@ class ConfirmationPage : AppCompatActivity() {
         val tvYearOfStudy = findViewById<TextView>(R.id.textViewYearOfStudy)
         val tvDate = findViewById<TextView>(R.id.textViewDate)
         val tvTime = findViewById<TextView>(R.id.textViewTime)
-        val backButton= findViewById<Button>(R.id.button12)
-        val confirmButton= findViewById<Button>(R.id.button11)
-        tvName.text = "NAME:    "+ Details.getName()
-        tvEmail.text = "EMAIL:  "+ Details.getEmail()
-        tvPhone.text = "CONTACT NO.:    "+ Details.getPhone()
-        tvDesignation.text = "DESIGNATION:   "+ Details.getDesignation()
-        tvDepartment.text = "DEPARTMENT:    "+ Details.getDepartment()
-        tvEventType.text = "EVENT TYPE: "+ Details.getEventType()
-        tvDegree.text = "DEGREE:"+ Details.getDegree()
-        tvYearOfStudy.text = "YEAR OF STUDY:    "+ Details.getYearOfStudy()
-        tvDate.text = "DATE:    "+ Details.getDate()
-        tvTime.text = "TIME:    "+ Details.getStartTime() + " to " + Details.getEndTime()
+        val checkSlotButton = findViewById<Button>(R.id.button12)
+        val confirmButton = findViewById<Button>(R.id.button11)
+        tvName.text = "NAME:    " + Details.getName()
+        tvEmail.text = "EMAIL:  " + Details.getEmail()
+        tvPhone.text = "CONTACT NO.:    " + Details.getPhone()
+        tvDesignation.text = "DESIGNATION:   " + Details.getDesignation()
+        tvDepartment.text = "DEPARTMENT:    " + Details.getDepartment()
+        tvEventType.text = "EVENT TYPE: " + Details.getEventType()
+        tvDegree.text = "DEGREE:" + Details.getDegree()
+        tvYearOfStudy.text = "YEAR OF STUDY:    " + Details.getYearOfStudy()
+        tvDate.text = "DATE:    " + Details.getDate()
+        tvTime.text = "TIME:    " + Details.getStartTime() + " to " + Details.getEndTime()
+        var booltiming = true
 
-        backButton.setOnClickListener{
-            val intent = Intent(this, FifthPage::class.java)
-            startActivity(intent)
-        }
-        confirmButton?.setOnClickListener {
-            var booltiming = true;
+        checkSlotButton?.setOnClickListener {
             database = FirebaseDatabase.getInstance("https://a2-halls-tce-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("bookingDetails")
-            database.addValueEventListener(object: ValueEventListener {
+            database.addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     for (eventSnapshot in snapshot.children) {
                         var edate = eventSnapshot.child("date").getValue()
@@ -59,30 +52,46 @@ class ConfirmationPage : AppCompatActivity() {
                         var eetime = eventSnapshot.child("endTime").getValue()
                         // var condition1 = checkTimeSlots(estime.toString(),eetime.toString(),Details.getStartTime(),Details.getEndTime())
                         // var condition2 = checkTimeSlots(estime.toString(),eetime.toString(),Details.getStartTime(),Details.getEndTime())
-                        booltiming = !((Details.getDate() == edate) && !checkTimeSlots(estime.toString(),eetime.toString(), Details.getStartTime(),Details.getEndTime()))
-                        if(!booltiming)
+                        booltiming = !((Details.getDate() == edate) && !checkTimeSlots(
+                            estime.toString(),
+                            eetime.toString(),
+                            Details.getStartTime(),
+                            Details.getEndTime()
+                        ))
+                        if (!booltiming)
                             break
                     }
+                    if(booltiming) {
+                        Toast.makeText(
+                            applicationContext,
+                            "Slot available! Click on confirm to proceed",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        confirmButton.isEnabled = true
+                    }
+                    else{
+                        Toast.makeText(
+                            applicationContext,
+                            "Slot not available! Refer slots and contact the concerned person",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        confirmButton.isEnabled = false
+                    }
                 }
+
                 override fun onCancelled(error: DatabaseError) {
                     TODO("Not yet implemented")
                 }
             })
+        }
+
+        confirmButton?.setOnClickListener{
             if(booltiming)
             {
                 Details.setId(database.push().key!!)
                 writeAllDetails(Details.getId()!!)
                 val intent = Intent(this,ConfirmedPage::class.java)
                 startActivity(intent)
-            }
-            else
-            {
-                Toast.makeText(
-                    applicationContext,
-                    "Slot not available! Refer slots and contact the concerned person",
-                    Toast.LENGTH_SHORT
-                ).show()
-                println("Slot conflict")
             }
         }
     }
@@ -115,13 +124,13 @@ class ConfirmationPage : AppCompatActivity() {
 //            e.printStackTrace()
 ////        }
 //        return false
-        var bool = false;
+        var bool = false
         if(newend!! >= oldstart && newend <= oldend)
-            bool = true;
+            bool = true
         if(newstart!! >= oldstart && newstart <= oldend)
-            bool = true;
+            bool = true
         if(oldstart!! >= newstart &&  newend >= oldend)
-            bool = true;
+            bool = true
         return bool;
     }
 }

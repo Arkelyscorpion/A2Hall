@@ -54,10 +54,13 @@ class BasicDetails : AppCompatActivity() {
                 }
                 return@setOnClickListener
             }
+
             if ((!radiobutton1.isChecked) && (!radiobutton2.isChecked) && (!radiobutton3.isChecked) && (otherDesignation.isEmpty())) {
                 textDesignation.error = "Required field"
                 return@setOnClickListener
             }
+
+
             Details.setName(username)
             Details.setEmail(email)
             Details.setPhone(phone)

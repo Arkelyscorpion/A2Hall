@@ -80,7 +80,6 @@ class ConfirmationPage : AppCompatActivity() {
                 }
 
                 override fun onCancelled(error: DatabaseError) {
-                    TODO("Not yet implemented")
                 }
             })
         }
@@ -97,7 +96,6 @@ class ConfirmationPage : AppCompatActivity() {
     }
 
     fun writeAllDetails(id : String) {
-        //PUSHING DATA INTO FIREBASE DATABASE
         database.child(id).setValue(Details)
     }
 

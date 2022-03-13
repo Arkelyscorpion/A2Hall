@@ -8,6 +8,7 @@ import android.widget.Button
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
@@ -19,6 +20,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var mAuth : FirebaseAuth
     val  firebaseAuth= FirebaseAuth.getInstance()
     private lateinit var googleSignInClient: GoogleSignInClient
+    private lateinit var userProfile :GoogleSignInAccount
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,10 +36,14 @@ class LoginActivity : AppCompatActivity() {
         mAuth = firebaseAuth
 
 
+
         signInButton.setOnClickListener{
             signInGoogle()
 
         }
+
+
+
     }
 
     private fun signInGoogle(){

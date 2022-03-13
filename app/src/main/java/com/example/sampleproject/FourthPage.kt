@@ -21,12 +21,7 @@ class FourthPage : AppCompatActivity() {
         val radiobutton9 = findViewById<RadioButton>(R.id.radioButton9)
         val radiobutton10 = findViewById<RadioButton>(R.id.radioButton10)
         val nextButton = findViewById<Button>(R.id.button6)
-        val backButton = findViewById<Button>(R.id.button7)
 
-        backButton?.setOnClickListener() {
-            val intent = Intent(this, SecondaryDetails::class.java)
-            startActivity(intent)
-        }
         nextButton?.setOnClickListener() {
             if((!radiobutton.isChecked) && (!radiobutton4.isChecked))
             {

@@ -23,13 +23,6 @@ class SecondaryDetails : AppCompatActivity() {
         radiobutton1 = findViewById(R.id.radioButton)
         radiobutton2 = findViewById(R.id.radioButton4)
         nextButton = findViewById(R.id.button5)
-        backButton = findViewById(R.id.button4)
-
-        backButton?.setOnClickListener(){
-            val intent = Intent(this,BasicDetails::class.java)
-            startActivity(intent)
-        }
-
         nextButton?.setOnClickListener(){
             val department = autoCompleteTV.text.toString().trim()
             val otherEvent = textOtherEvent.text.toString().trim()

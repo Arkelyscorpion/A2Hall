@@ -6,170 +6,162 @@
     android:layout_height="match_parent"
     tools:context=".BasicDetails">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/outlinedTextInputField1"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="340dp"
-        android:layout_height="85dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="30dp"
-        app:helperText="*Required"
-        app:helperTextTextColor="@color/red"
-        app:startIconDrawable="@drawable/ic_round_person_24"
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="395dp"
+        android:layout_height="628dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputEditText1"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="@string/name" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/outlinedTextInputField2"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="348dp"
-        android:layout_height="83dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="30dp"
-        app:helperText="*Required"
-        app:helperTextTextColor="@color/red"
-        app:startIconDrawable="@drawable/ic_round_email_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.544"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/outlinedTextInputField1">
-
-        <EditText
-            android:id="@+id/editTextTextEmailAddress1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="Email"
-            android:inputType="textEmailAddress"
-            tools:ignore="SpeakableTextPresentCheck"
-            android:autofillHints="" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/outlinedTextInputField3"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="338dp"
-        android:layout_height="85dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="30dp"
-        app:helperText="*Required"
-        app:helperTextTextColor="@color/red"
-        app:startIconDrawable="@drawable/ic_round_contact_phone_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:prefixText="+91"
-        app:prefixTextColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@+id/outlinedTextInputField2">
-
-        <EditText
-            android:id="@+id/editTextPhone1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/phone_number"
-            android:inputType="phone"
-            tools:ignore="SpeakableTextPresentCheck" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <RadioGroup
-        android:id="@+id/radioGroupForDesignation"
-        android:layout_width="340dp"
-        android:layout_height="198dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.54"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/outlinedTextInputField3">
-
-        <TextView
-            android:id="@+id/headingForDesignation"
-            style="@style/TextAppearance.MaterialComponents.Headline3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="\tDesignation:\n"
-            android:textSize="17sp" />
-
-        <RadioButton
-            android:id="@+id/radioButton1"
-            android:layout_width="310dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:text="Professor" />
-
-
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="310dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:text="Assistant Professor" />
-
-        <RadioButton
-            android:id="@+id/radioButton3"
-            android:layout_width="310dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:text="Associate Professor" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/othersForDesignation"
+            android:id="@+id/outlinedTextInputField1"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="307dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="32dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_width="340dp"
+            android:layout_height="85dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            app:helperText="*Required"
+            app:helperTextTextColor="@color/red"
+            app:startIconDrawable="@drawable/ic_round_person_24">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/textInputFieldForOthers"
+                android:id="@+id/textInputEditText1"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:hint="others" />
+                android:layout_height="50dp"
+                android:hint="@string/name" />
         </com.google.android.material.textfield.TextInputLayout>
 
-    </RadioGroup>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/outlinedTextInputField2"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="348dp"
+            android:layout_height="83dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="30dp"
+            app:helperText="*Required"
+            app:helperTextTextColor="@color/red"
+            app:startIconDrawable="@drawable/ic_round_email_24">
+
+            <EditText
+                android:id="@+id/editTextTextEmailAddress1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/outlinedTextInputField3"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="338dp"
+            android:layout_height="85dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="30dp"
+            app:helperText="*Required"
+            app:helperTextTextColor="@color/red"
+            app:prefixText="+91"
+            app:prefixTextColor="@color/black"
+            app:startIconDrawable="@drawable/ic_round_contact_phone_24">
+
+            <EditText
+                android:id="@+id/editTextPhone1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/phone_number"
+                android:inputType="phone"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <RadioGroup
+            android:id="@+id/radioGroupForDesignation"
+            android:layout_width="340dp"
+            android:layout_height="198dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="30dp">
+
+            <TextView
+                android:id="@+id/headingForDesignation"
+                style="@style/TextAppearance.MaterialComponents.Headline3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\tDesignation:\n"
+                android:textSize="17sp" />
+
+            <RadioButton
+                android:id="@+id/radioButton1"
+                android:layout_width="310dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:text="Professor" />
+
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="310dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:text="Assistant Professor" />
+
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="310dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:text="Associate Professor" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/othersForDesignation"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="307dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputFieldForOthers"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:hint="others" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </RadioGroup>
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="116dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="32dp"
         android:text="Next"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button3"/>
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginBottom="40dp"
-        android:text="Back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.467"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

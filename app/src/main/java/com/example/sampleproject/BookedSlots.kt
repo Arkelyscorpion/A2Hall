@@ -1,7 +1,12 @@
 package com.example.sampleproject
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.ImageButton
+import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
@@ -15,13 +20,13 @@ class BookedSlots : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_booked_slots)
-
         eventRecyclerView = findViewById(R.id.eventList)
         eventRecyclerView.layoutManager = LinearLayoutManager(this)
         eventRecyclerView.setHasFixedSize(true)
-
         eventArrayList = arrayListOf<Event>()
         getEventData()
+
+
     }
 
     private fun getEventData() {
@@ -37,7 +42,11 @@ class BookedSlots : AppCompatActivity() {
                 }
             }
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+                Toast.makeText(
+                    applicationContext,
+                    "Please check your internet connection and try again",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         })
     }

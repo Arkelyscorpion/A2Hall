@@ -80,6 +80,11 @@ class ConfirmationPage : AppCompatActivity() {
                 }
 
                 override fun onCancelled(error: DatabaseError) {
+                    Toast.makeText(
+                        applicationContext,
+                        "Please check your internet connection and try again",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             })
         }
@@ -100,28 +105,6 @@ class ConfirmationPage : AppCompatActivity() {
     }
 
     fun checkTimeSlots(oldstart: String, oldend: String, newstart: String?,newend: String?): Boolean{
-//        try {
-//            val time1: Date = SimpleDateFormat("HH:mm").parse(a)
-//            val calendar1 = Calendar.getInstance()
-//            calendar1.time = time1
-//            calendar1.add(Calendar.DATE, 1)
-//            val time2: Date = SimpleDateFormat("HH:mm").parse(b)
-//            val calendar2 = Calendar.getInstance()
-//            calendar2.time = time2
-//            calendar2.add(Calendar.DATE, 1)
-//            val d: Date = SimpleDateFormat("HH:mm").parse(c)
-//            val calendar3 = Calendar.getInstance()
-//            calendar3.time = d
-//            calendar3.add(Calendar.DATE, 1)
-//            val x = calendar3.time
-//            if (x.after(calendar1.time) && x.before(calendar2.time)) {
-//                //checks whether the current time is between 14:49:00 and 20:11:13.
-//                return true
-//            }
-//        } catch (e: ParseException) {
-//            e.printStackTrace()
-////        }
-//        return false
         var bool = false
         if(newend!! >= oldstart && newend <= oldend)
             bool = true

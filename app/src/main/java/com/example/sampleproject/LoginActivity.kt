@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -31,19 +32,14 @@ class LoginActivity : AppCompatActivity() {
             .requestIdToken(getString(R.string.web_client_id))
             .requestEmail()
             .build()
-         googleSignInClient = GoogleSignIn.getClient(this, gso);
+        googleSignInClient = GoogleSignIn.getClient(this, gso);
 
         mAuth = firebaseAuth
 
 
-
         signInButton.setOnClickListener{
             signInGoogle()
-
         }
-
-
-
     }
 
     private fun signInGoogle(){
@@ -58,7 +54,6 @@ class LoginActivity : AppCompatActivity() {
                 try {
                     val account = task.getResult(ApiException::class.java)
                     firebaseAuthWithGoogle(account.idToken!!)
-
                 }
                 catch (e:ApiException){
                     println("excpetion")
@@ -82,6 +77,11 @@ class LoginActivity : AppCompatActivity() {
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w("signinact", "signInWithCredential:failure", task.exception)
+                    Toast.makeText(
+                        applicationContext,
+                        "Login using college mail id",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
     }
@@ -109,7 +109,4 @@ class LoginActivity : AppCompatActivity() {
 //            Toast.makeText(this,e.toString(),Toast.LENGTH_SHORT).show()
 //        }
 //    }
-
-
-
 }

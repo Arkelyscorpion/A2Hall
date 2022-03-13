@@ -27,12 +27,6 @@ class BasicDetails : AppCompatActivity() {
         val radiobutton2 = findViewById<RadioButton>(R.id.radioButton2)
         val radiobutton3 = findViewById<RadioButton>(R.id.radioButton3)
         val textOthers = findViewById<EditText>(R.id.textInputFieldForOthers)
-        val backButton = findViewById<Button>(R.id.button3)
-        backButton?.setOnClickListener(){
-            val intent = Intent(this,MainActivity::class.java)
-            startActivity(intent)
-        }
-
         val nextButton = findViewById<Button>(R.id.button2)
         nextButton?.setOnClickListener() {
             val username = etName.text.toString().trim()

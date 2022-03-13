@@ -33,9 +33,7 @@ class FifthPage : AppCompatActivity() {
         endTimeButton = findViewById(R.id.button14)
         startTimeText = findViewById(R.id.textView4)
         endTimeText = findViewById(R.id.textView5)
-        val backButton= findViewById<Button>(R.id.button13)
         val nextButton = findViewById<Button>(R.id.button10)
-
         val c = Calendar.getInstance()
         val year = c.get(Calendar.YEAR)
         val month = c.get(Calendar.MONTH)
@@ -72,11 +70,6 @@ class FifthPage : AppCompatActivity() {
 
         endTimeButton.setOnClickListener{
             mEndTimePicker.show()
-        }
-
-        backButton.setOnClickListener{
-            val intent = Intent(this, SecondaryDetails::class.java)
-            startActivity(intent)
         }
 
         nextButton?.setOnClickListener() {

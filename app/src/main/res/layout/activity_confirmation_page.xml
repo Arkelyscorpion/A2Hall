@@ -107,7 +107,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="Time of event:"
-            android:textSize="18sp" />
+            android:textSize="19sp" />
 
     </LinearLayout>
 

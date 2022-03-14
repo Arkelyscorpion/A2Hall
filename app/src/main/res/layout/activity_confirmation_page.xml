@@ -8,8 +8,9 @@
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="391dp"
-        android:layout_height="529dp"
+        android:layout_width="365dp"
+        android:layout_height="528dp"
+        android:layout_margin="20dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,7 +26,8 @@
             android:padding="10dp"
             android:text="SLOT CONFIRMATION"
             android:textAlignment="center"
-            android:textSize="20dp" />
+            android:layout_marginBottom="20dp"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/textViewName"
@@ -33,15 +35,15 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="Name:"
-            android:textSize="20dp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/textViewEmail"
             android:layout_width="match_parent"
-            android:layout_height="58dp"
+            android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="Email:"
-            android:textSize="20dp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/textViewPhone"
@@ -49,7 +51,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="Phone:"
-            android:textSize="20dp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/textViewDesignation"
@@ -57,7 +59,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="Designation:"
-            android:textSize="20dp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/textViewDepartment"
@@ -65,7 +67,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="Department:"
-            android:textSize="20dp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/textViewDegree"
@@ -73,7 +75,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="Degree:"
-            android:textSize="20dp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/textViewYearOfStudy"
@@ -81,7 +83,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="Year of Study:"
-            android:textSize="20dp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/textViewEventType"
@@ -89,7 +91,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="Event Type:"
-            android:textSize="20dp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/textViewDate"
@@ -97,7 +99,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="Date of event:"
-            android:textSize="20dp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/textViewTime"
@@ -105,7 +107,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="Time of event:"
-            android:textSize="20dp" />
+            android:textSize="18sp" />
 
     </LinearLayout>
 

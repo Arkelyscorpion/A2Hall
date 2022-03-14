@@ -21,34 +21,35 @@
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
-        android:layout_width="328dp"
-        android:layout_height="79dp"
+        android:layout_width="331dp"
+        android:layout_height="87dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="124dp"
         android:layout_marginEnd="32dp"
         app:helperText="*Required"
         app:helperTextTextColor="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <AutoCompleteTextView
             android:id="@+id/autoCompleteTextView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="329dp"
+            android:layout_height="52dp"
             android:layout_weight="1"
             android:dropDownHeight="250dp"
             android:inputType="none"
-            android:textColor="#757575" />
+             />
+
     </com.google.android.material.textfield.TextInputLayout>
 
     <RadioGroup
         android:id="@+id/radioGroup2"
         android:layout_width="350dp"
         android:layout_height="233dp"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="276dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -89,9 +90,21 @@
                 android:id="@+id/textInputFieldForOthers"
                 android:layout_width="match_parent"
                 android:layout_height="62dp"
-                android:hint="others" />
+                android:hint="Others" />
         </com.google.android.material.textfield.TextInputLayout>
 
     </RadioGroup>
+
+    <TextView
+        android:id="@+id/headingForEvent3"
+        style="@style/TextAppearance.MaterialComponents.Headline3"
+        android:layout_width="174dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="80dp"
+        android:text="\tDepartment:"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

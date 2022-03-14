@@ -11,7 +11,7 @@
         android:id="@+id/textView5"
         android:layout_width="203dp"
         android:layout_height="42dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="32dp"
         android:hint="End Time"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,21 +19,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button14" />
 
-    <Button
-        android:id="@+id/button8"
-        android:layout_width="320dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="36dp"
-        android:text="Day of event"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/textView3"
         android:layout_width="204dp"
         android:layout_height="36dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:hint="Date"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,10 +32,33 @@
         app:layout_constraintTop_toBottomOf="@+id/button8" />
 
     <Button
+        android:id="@+id/button14"
+        android:layout_width="320dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="48dp"
+        android:text="End time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="203dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="12dp"
+        android:hint="Start Time"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.235"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button9" />
+
+    <Button
         android:id="@+id/button9"
         android:layout_width="320dp"
         android:layout_height="70dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="36dp"
         android:text="Start Time"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.527"
@@ -53,27 +66,15 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
-        android:id="@+id/button14"
+        android:id="@+id/button8"
         android:layout_width="320dp"
         android:layout_height="70dp"
-        android:layout_marginTop="40dp"
-        android:text="End time"
+        android:layout_marginTop="44dp"
+        android:text="Day of event"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"/>
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="203dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="20dp"
-        android:hint="Start Time"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.235"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button9" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button10"

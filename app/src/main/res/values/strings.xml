@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SampleProject</string>
+    <string name="app_name">A2 Hall</string>
     <string name="phone_number">Phone Number</string>
     <string name="name">Name</string>
     <string-array name="Departments">

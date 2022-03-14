@@ -13,16 +13,15 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.067">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/outlinedTextInputField1"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="340dp"
-            android:layout_height="85dp"
+            android:layout_height="94dp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="30dp"
@@ -33,7 +32,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textInputEditText1"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="62dp"
                 android:hint="@string/name" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -52,7 +51,7 @@
             <EditText
                 android:id="@+id/editTextTextEmailAddress1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="53dp"
                 android:layout_weight="1"
                 android:autofillHints=""
                 android:ems="10"
@@ -72,7 +71,6 @@
             app:helperText="*Required"
             app:helperTextTextColor="@color/red"
             app:prefixText="+91"
-            app:prefixTextColor="@color/black"
             app:startIconDrawable="@drawable/ic_round_contact_phone_24">
 
             <EditText
@@ -130,7 +128,7 @@
                 android:id="@+id/othersForDesignation"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="307dp"
-                android:layout_height="wrap_content"
+                android:layout_height="72dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="32dp"
@@ -142,8 +140,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/textInputFieldForOthers"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:hint="others" />
+                    android:layout_height="57dp"
+                    android:hint="Others" />
             </com.google.android.material.textfield.TextInputLayout>
 
         </RadioGroup>

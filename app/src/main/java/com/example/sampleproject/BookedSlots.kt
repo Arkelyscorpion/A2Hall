@@ -1,12 +1,10 @@
 package com.example.sampleproject
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageButton
+import android.util.Log
 import android.widget.Toast
-import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
@@ -48,6 +46,9 @@ class BookedSlots : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
             }
+
+
+
         })
     }
 }

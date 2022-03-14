@@ -31,8 +31,8 @@
                 android:layout_height="59dp"
                 android:drawableStart="@drawable/ic_round_book_24"
                 android:drawablePadding="5dp"
-                android:text="\tDegree:\n"
-                android:textSize="17sp" />
+                android:text="\t\t\nDegree:\n"
+                android:textSize="16sp" />
 
             <RadioButton
                 android:id="@+id/radioButton"

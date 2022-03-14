@@ -24,8 +24,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Name: "
-                android:textColor="@color/black"
-                android:textSize="26sp"
+                android:textSize="20sp"
                 android:textStyle="bold"/>
 
             <TextView
@@ -34,7 +33,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:text="name"
-                android:textColor="@color/black"
                 android:textSize="20sp"/>
 
         </LinearLayout>
@@ -49,8 +47,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Date: "
-                android:textColor="@color/black"
-                android:textSize="26sp"
+                android:textSize="20sp"
                 android:textStyle="bold"/>
 
             <TextView
@@ -59,7 +56,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:text="date"
-                android:textColor="@color/black"
                 android:textSize="20sp"/>
 
         </LinearLayout>
@@ -74,8 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Start Time: "
-                android:textColor="@color/black"
-                android:textSize="26sp"
+                android:textSize="20sp"
                 android:textStyle="bold"/>
 
             <TextView
@@ -84,7 +79,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:text="20"
-                android:textColor="@color/black"
                 android:textSize="20sp"/>
 
         </LinearLayout>
@@ -99,8 +93,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="End Time: "
-                android:textColor="@color/black"
-                android:textSize="26sp"
+                android:textSize="20sp"
                 android:textStyle="bold"/>
 
             <TextView
@@ -109,7 +102,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:text="20"
-                android:textColor="@color/black"
                 android:textSize="20sp"/>
 
         </LinearLayout>
@@ -124,8 +116,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Contact No.: "
-                android:textColor="@color/black"
-                android:textSize="26sp"
+                android:textSize="20sp"
                 android:textStyle="bold"/>
 
             <TextView
@@ -134,7 +125,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:text="20"
-                android:textColor="@color/black"
                 android:textSize="20sp"/>
 
         </LinearLayout>

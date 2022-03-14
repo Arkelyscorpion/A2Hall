@@ -40,8 +40,8 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/outlinedTextInputField2"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="348dp"
-            android:layout_height="83dp"
+            android:layout_width="340dp"
+            android:layout_height="85dp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="30dp"

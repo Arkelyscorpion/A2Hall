@@ -3,12 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/A2Hall/app/src/main/res/layout/activity_basic_details.xml" value="1.0" />
-        <entry key="..\:/A2Hall/app/src/main/res/layout/activity_booked_slots.xml" value="0.1" />
+        <entry key="..\:/A2Hall/app/src/main/res/layout/activity_basic_details.xml" value="0.264" />
+        <entry key="..\:/A2Hall/app/src/main/res/layout/activity_booked_slots.xml" value="0.264" />
         <entry key="..\:/A2Hall/app/src/main/res/layout/activity_confirmation_page.xml" value="0.264" />
+        <entry key="..\:/A2Hall/app/src/main/res/layout/activity_confirmed_page.xml" value="0.25" />
         <entry key="..\:/A2Hall/app/src/main/res/layout/activity_fifth_page.xml" value="0.26197916666666665" />
-        <entry key="..\:/A2Hall/app/src/main/res/layout/activity_fourth_page.xml" value="0.26197916666666665" />
-        <entry key="..\:/A2Hall/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/A2Hall/app/src/main/res/layout/activity_fourth_page.xml" value="0.264" />
+        <entry key="..\:/A2Hall/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/A2Hall/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/A2Hall/app/src/main/res/layout/activity_secondary_details.xml" value="0.264" />
         <entry key="..\:/A2Hall/app/src/main/res/layout/dropdown_item.xml" value="0.26197916666666665" />
         <entry key="..\:/A2Hall/app/src/main/res/layout/event_item.xml" value="0.264" />

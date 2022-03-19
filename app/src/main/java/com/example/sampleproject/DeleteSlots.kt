@@ -1,23 +1,22 @@
 package com.example.sampleproject
 
-import android.content.Intent
-import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.database.*
 
-class BookedSlots : AppCompatActivity() {
-
+class DeleteSlots : AppCompatActivity() {
     private lateinit var database : DatabaseReference
     private lateinit var eventRecyclerView : RecyclerView
     private lateinit var eventArrayList : ArrayList<Event>
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_booked_slots)
+        setContentView(R.layout.activity_delete_slots)
         eventRecyclerView = findViewById(R.id.eventList)
         eventRecyclerView.layoutManager = LinearLayoutManager(this)
         eventRecyclerView.setHasFixedSize(true)
@@ -27,12 +26,14 @@ class BookedSlots : AppCompatActivity() {
 
     private fun getEventData() {
         database = FirebaseDatabase.getInstance("https://a2-halls-tce-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("bookingDetails")
-        database.addValueEventListener(object: ValueEventListener{
+        database.addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()){
                     for (eventSnapshot in snapshot.children){
-                        val user = eventSnapshot.getValue(Event::class.java)
-                        eventArrayList.add(user!!)
+                        if(eventSnapshot.child("bookerEmail").value == Details.getBookerEmail()) {
+                            val user = eventSnapshot.getValue(Event::class.java)
+                            eventArrayList.add(user!!)
+                        }
                     }
                     eventRecyclerView.adapter = EventAdapter(eventArrayList)
                 }

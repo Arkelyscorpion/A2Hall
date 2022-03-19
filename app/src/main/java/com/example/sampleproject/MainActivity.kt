@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val button = findViewById<Button>(R.id.button)
         val button2 = findViewById<Button>(R.id.btnCheckSlot)
+        val button3 = findViewById<Button>(R.id.btnDeleteSlot)
         val logout = findViewById<Button>(R.id.logout_button)
         /*
         operations to be performed
@@ -25,7 +26,6 @@ class MainActivity : AppCompatActivity() {
             .requestEmail()
             .build()
         googleSignInClient = GoogleSignIn.getClient(this, gso);
-
         button?.setOnClickListener()
         {
             //intent is used to link one page to another
@@ -37,6 +37,13 @@ class MainActivity : AppCompatActivity() {
         button2?.setOnClickListener()
         {
             val intent= Intent(this, BookedSlots::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        button3?.setOnClickListener()
+        {
+            val intent= Intent(this, DeleteSlots::class.java)
             startActivity(intent)
             finish()
         }

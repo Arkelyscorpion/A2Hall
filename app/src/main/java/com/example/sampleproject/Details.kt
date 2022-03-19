@@ -13,6 +13,7 @@ object Details {
     private var date: String ?= null
     private var startTime: String ?=null
     private var endTime: String ?=null
+    private var bookerEmail: String ?= null
 
     fun setName(name:String){
         this.name = name
@@ -22,6 +23,9 @@ object Details {
     }
     fun setPhone(phone:String){
         this.phone = phone
+    }
+    fun setBookerEmail(bookerEmail:String){
+        this.bookerEmail= bookerEmail
     }
     fun setDesignation(designation:String){
         this.designation = designation
@@ -64,6 +68,9 @@ object Details {
     }
     fun getEmail(): String?{
         return this.email
+    }
+    fun getBookerEmail(): String?{
+        return this.bookerEmail
     }
     fun getPhone(): String?{
         return this.phone

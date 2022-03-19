@@ -36,7 +36,6 @@ class LoginActivity : AppCompatActivity() {
 
         mAuth = firebaseAuth
 
-
         signInButton.setOnClickListener{
             signInGoogle()
         }

@@ -8,6 +8,8 @@ import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class BasicDetails : AppCompatActivity() {
 
@@ -19,6 +21,7 @@ class BasicDetails : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_basic_details)
+        val user= Firebase.auth.currentUser
         etName = findViewById(R.id.textInputEditText1)
         etEmail = findViewById(R.id.editTextTextEmailAddress1)
         etPhone = findViewById(R.id.editTextPhone1)
@@ -58,7 +61,10 @@ class BasicDetails : AppCompatActivity() {
             Details.setName(username)
             Details.setEmail(email)
             Details.setPhone(phone)
-
+            if(user!=null)
+            {
+                Details.setBookerEmail(user.email.toString())
+            }
             if(otherDesignation.isNotEmpty())
                 Details.setDesignation(otherDesignation)
             else if(radiobutton1.isChecked)

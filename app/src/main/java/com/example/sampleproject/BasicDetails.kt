@@ -3,10 +3,7 @@ package com.example.sampleproject
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.RadioButton
-import android.widget.TextView
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -21,7 +18,6 @@ class BasicDetails : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_basic_details)
-        val user= Firebase.auth.currentUser
         etName = findViewById(R.id.textInputEditText1)
         etEmail = findViewById(R.id.editTextTextEmailAddress1)
         etPhone = findViewById(R.id.editTextPhone1)
@@ -31,7 +27,7 @@ class BasicDetails : AppCompatActivity() {
         val radiobutton3 = findViewById<RadioButton>(R.id.radioButton3)
         val textOthers = findViewById<EditText>(R.id.textInputFieldForOthers)
         val nextButton = findViewById<Button>(R.id.button2)
-        nextButton?.setOnClickListener() {
+            nextButton?.setOnClickListener() {
             val username = etName.text.toString().trim()
             val email = etEmail.text.toString().trim()
             val phone = etPhone.text.toString().trim()
@@ -61,10 +57,6 @@ class BasicDetails : AppCompatActivity() {
             Details.setName(username)
             Details.setEmail(email)
             Details.setPhone(phone)
-            if(user!=null)
-            {
-                Details.setBookerEmail(user.email.toString())
-            }
             if(otherDesignation.isNotEmpty())
                 Details.setDesignation(otherDesignation)
             else if(radiobutton1.isChecked)

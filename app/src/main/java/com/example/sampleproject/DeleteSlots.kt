@@ -1,5 +1,6 @@
 package com.example.sampleproject
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -17,7 +18,7 @@ class DeleteSlots : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_delete_slots)
-        eventRecyclerView = findViewById(R.id.eventList)
+        eventRecyclerView = findViewById(R.id.eventDeleteList)
         eventRecyclerView.layoutManager = LinearLayoutManager(this)
         eventRecyclerView.setHasFixedSize(true)
         eventArrayList = arrayListOf<Event>()
@@ -35,7 +36,14 @@ class DeleteSlots : AppCompatActivity() {
                             eventArrayList.add(user!!)
                         }
                     }
-                    eventRecyclerView.adapter = EventAdapter(eventArrayList)
+                    eventRecyclerView.adapter = EventDeleteAdapter(eventArrayList)
+                }
+                else {
+                    Toast.makeText(
+                        applicationContext,
+                        "CURRENTLY NO BOOKINGS",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
             override fun onCancelled(error: DatabaseError) {

@@ -7,12 +7,15 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
     private lateinit var googleSignInClient: GoogleSignInClient
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val user= Firebase.auth.currentUser
         val button = findViewById<Button>(R.id.button)
         val button2 = findViewById<Button>(R.id.btnCheckSlot)
         val button3 = findViewById<Button>(R.id.btnDeleteSlot)
@@ -26,6 +29,11 @@ class MainActivity : AppCompatActivity() {
             .requestEmail()
             .build()
         googleSignInClient = GoogleSignIn.getClient(this, gso);
+
+        if(user!=null)
+        {
+            Details.setBookerEmail(user.email.toString())
+        }
         button?.setOnClickListener()
         {
             //intent is used to link one page to another

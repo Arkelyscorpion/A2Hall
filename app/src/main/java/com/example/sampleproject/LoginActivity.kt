@@ -78,7 +78,7 @@ class LoginActivity : AppCompatActivity() {
                     Log.w("signinact", "signInWithCredential:failure", task.exception)
                     Toast.makeText(
                         applicationContext,
-                        "Login using college mail id",
+                        "Please check your internet connection and try again",
                         Toast.LENGTH_SHORT
                     ).show()
                 }

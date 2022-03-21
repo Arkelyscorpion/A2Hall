@@ -36,6 +36,13 @@ class BookedSlots : AppCompatActivity() {
                     }
                     eventRecyclerView.adapter = EventAdapter(eventArrayList)
                 }
+                else {
+                    Toast.makeText(
+                        applicationContext,
+                        "CURRENTLY NO BOOKINGS",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
             }
             override fun onCancelled(error: DatabaseError) {
                 Toast.makeText(

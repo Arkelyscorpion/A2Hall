@@ -2,12 +2,14 @@ package com.example.sampleproject
 
 import android.app.AlertDialog
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import androidx.databinding.DataBindingUtil.setContentView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sampleproject.databinding.ActivityDeleteSlotsBinding
@@ -33,7 +35,6 @@ class EventDeleteAdapter(context: Context, private val eventList: ArrayList<Even
             Contact = itemView.findViewById(R.id.tvContact)
             deleteEvent = itemView.findViewById(R.id.imageButton)
             id = itemView.findViewById(R.id.tvId)
-            val position = adapterPosition
             deleteEvent.setOnClickListener{
                 /*AlertDialog.Builder(context)
                     .setTitle("Delete")
@@ -54,8 +55,8 @@ class EventDeleteAdapter(context: Context, private val eventList: ArrayList<Even
                     }
                     .create()
                     .show()*/
+                eventList.removeAt(adapterPosition)
                 removeEvent(id.text as String)
-                eventList.removeAt(position)
                 notifyDataSetChanged()
             }
         }

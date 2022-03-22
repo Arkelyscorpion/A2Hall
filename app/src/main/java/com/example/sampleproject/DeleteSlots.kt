@@ -26,20 +26,23 @@ class DeleteSlots : AppCompatActivity() {
         database.addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()){
+                    var c = 0
                     for (eventSnapshot in snapshot.children){
                         if(eventSnapshot.child("bookerEmail").value == Details.getBookerEmail()) {
                             val user = eventSnapshot.getValue(Event::class.java)
                             eventArrayList.add(user!!)
+                            c++;
+                        }
+                        if(c==0)
+                        {
+                            Toast.makeText(
+                                applicationContext,
+                                "NO SLOTS BOOKED",
+                                Toast.LENGTH_SHORT
+                            ).show()
                         }
                     }
                     eventRecyclerView.adapter = EventDeleteAdapter(applicationContext,eventArrayList)
-                }
-                else {
-                    Toast.makeText(
-                        applicationContext,
-                        "CURRENTLY NO BOOKINGS",
-                        Toast.LENGTH_SHORT
-                    ).show()
                 }
             }
             override fun onCancelled(error: DatabaseError) {

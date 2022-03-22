@@ -13,6 +13,8 @@ import com.google.firebase.database.*
 
 class ConfirmationPage : AppCompatActivity() {
     private lateinit var database: DatabaseReference
+    var eventBookedName: String? = null
+    var eventBookedPhone: String? = null
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,6 +49,8 @@ class ConfirmationPage : AppCompatActivity() {
             database.addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     for (eventSnapshot in snapshot.children) {
+                        var eName = eventSnapshot.child("name").getValue()
+                        var ePhone = eventSnapshot.child("phone").getValue()
                         var edate = eventSnapshot.child("date").getValue()
                         var estime = eventSnapshot.child("startTime").getValue()
                         var eetime = eventSnapshot.child("endTime").getValue()
@@ -58,8 +62,11 @@ class ConfirmationPage : AppCompatActivity() {
                             Details.getStartTime(),
                             Details.getEndTime()
                         ))
-                        if (!booltiming)
+                        if (!booltiming) {
+                            eventBookedName = eName as String?
+                            eventBookedPhone = ePhone as String?
                             break
+                        }
                     }
                     if(booltiming) {
                         Toast.makeText(
@@ -72,7 +79,7 @@ class ConfirmationPage : AppCompatActivity() {
                     else{
                         Toast.makeText(
                             applicationContext,
-                            "Slot not available! Refer slots and contact the concerned person",
+                            "Slot not available! Slot booked by "+ eventBookedName + ", Phone Number:"+ eventBookedPhone,
                             Toast.LENGTH_SHORT
                         ).show()
                         confirmButton.isEnabled = false

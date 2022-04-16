@@ -33,14 +33,14 @@ class DeleteSlots : AppCompatActivity() {
                             eventArrayList.add(user!!)
                             c++;
                         }
-                        if(c==0)
-                        {
-                            Toast.makeText(
-                                applicationContext,
-                                "NO SLOTS BOOKED",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        }
+                    }
+                    if(c==0)
+                    {
+                        Toast.makeText(
+                            applicationContext,
+                            "NO SLOTS BOOKED",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
                     eventRecyclerView.adapter = EventDeleteAdapter(applicationContext,eventArrayList)
                 }

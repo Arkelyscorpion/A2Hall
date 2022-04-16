@@ -8,6 +8,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.*
+import java.util.*
 
 //data class Details(val name:String){}
 
@@ -40,7 +41,7 @@ class ConfirmationPage : AppCompatActivity() {
         tvEventType.text = "EVENT TYPE: " + Details.getEventType()
         tvDegree.text = "DEGREE:" + Details.getDegree()
         tvYearOfStudy.text = "YEAR OF STUDY:    " + Details.getYearOfStudy()
-        tvDate.text = "DATE:    " + Details.getDate()
+        tvDate.text = "DATE:    " + Dates.getDates()
         tvTime.text = "TIME:    " + Details.getStartTime() + " to " + Details.getEndTime()
         var booltiming = true
 
@@ -56,16 +57,19 @@ class ConfirmationPage : AppCompatActivity() {
                         var eetime = eventSnapshot.child("endTime").getValue()
                         // var condition1 = checkTimeSlots(estime.toString(),eetime.toString(),Details.getStartTime(),Details.getEndTime())
                         // var condition2 = checkTimeSlots(estime.toString(),eetime.toString(),Details.getStartTime(),Details.getEndTime())
-                        booltiming = !((Details.getDate() == edate) && !checkTimeSlots(
-                            estime.toString(),
-                            eetime.toString(),
-                            Details.getStartTime(),
-                            Details.getEndTime()
-                        ))
-                        if (!booltiming) {
-                            eventBookedName = eName as String?
-                            eventBookedPhone = ePhone as String?
-                            break
+                        for( i in Dates.getDates()!!){
+                            booltiming = !((Dates.getDates() == edate) && !checkTimeSlots(
+                                estime.toString(),
+                                eetime.toString(),
+                                Details.getStartTime(),
+                                Details.getEndTime()
+                            ))
+                            if (!booltiming) {
+                                eventBookedName = eName as String?
+                                eventBookedPhone = ePhone as String?
+                                break
+
+                            }
                         }
                     }
                     if(booltiming) {
@@ -99,8 +103,14 @@ class ConfirmationPage : AppCompatActivity() {
         confirmButton?.setOnClickListener{
             if(booltiming)
             {
-                Details.setId(database.push().key!!)
-                writeAllDetails(Details.getId()!!)
+                var dates= Dates.getDates()
+                if(dates != null){
+                    for(i in dates.indices){
+                        Details.setId(database.push().key!!)
+                        Details.setDate(dates.elementAt(i))
+                        writeAllDetails(Details.getId()!!)
+                    }
+                }
                 val intent = Intent(this,ConfirmedPage::class.java)
                 startActivity(intent)
             }

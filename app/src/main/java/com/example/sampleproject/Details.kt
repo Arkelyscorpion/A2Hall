@@ -1,5 +1,7 @@
 package com.example.sampleproject
 
+import java.util.*
+
 object Details {
     private var id: String?= null
     private var name: String?= null
@@ -11,6 +13,7 @@ object Details {
     private var degree: String ?= null
     private var yearOfStudy: String ?= null
     private var date: String ?= null
+    //private var dates: Vector<String> ?= null
     private var startTime: String ?=null
     private var endTime: String ?=null
     private var bookerEmail: String ?= null
@@ -42,7 +45,7 @@ object Details {
     fun setYearOfStudy(yearOfStudy:String){
         this.yearOfStudy = yearOfStudy
     }
-    fun setDate(date:String){
+    fun setDate(date: String){
         this.date = date
     }
     fun setStartTime(startTime:String){
